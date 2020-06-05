@@ -210,7 +210,6 @@ class MinesweeperAI():
         # The function should add a new sentence to the AI’s knowledge base, based on the value of cell and count, to
         # indicate that count of the cell’s neighbors are mines. Be sure to only include cells whose state is still undetermined in the sentence.
         nearby_cells = set()
-        known_mines = 0
         for i in range(cell[0] - 1, cell[0] + 2):
             for j in range(cell[1] - 1, cell[1] + 2):
 
@@ -223,7 +222,6 @@ class MinesweeperAI():
                     if new_cell not in self.moves_made:
                         nearby_cells.add(new_cell)
                         if new_cell in self.mines:
-                            known_mines += 1
 
         if len(nearby_cells) != 0:
             new_sentence = Sentence(nearby_cells, count)
