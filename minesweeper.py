@@ -221,7 +221,6 @@ class MinesweeperAI():
                 if 0 <= i < self.height and 0 <= j < self.width:
                     if new_cell not in self.moves_made:
                         nearby_cells.add(new_cell)
-                        if new_cell in self.mines:
 
         if len(nearby_cells) != 0:
             new_sentence = Sentence(nearby_cells, count)
